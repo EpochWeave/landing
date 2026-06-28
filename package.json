@@ -1,0 +1,22 @@
+{
+  "name": "epochweave-landing",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@iconify-json/material-symbols": "^1.2.81",
+    "@nuxt/icon": "^2.2.4",
+    "@tailwindcss/vite": "^4.3.1",
+    "@vueuse/motion": "^3.0.3",
+    "nuxt": "^4.4.8",
+    "tailwindcss": "^4.3.1",
+    "vue": "^3.5.38",
+    "vue-router": "^5.1.0"
+  }
+}

@@ -1,0 +1,322 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ─────────────────────────────────────────────────────
+   NON-COLOR TOKENS  (fonts · sizes · spacing · radii)
+   Defined as plain values so Tailwind generates utilities
+   ───────────────────────────────────────────────────── */
+@theme {
+  /* ── Font Families ── */
+  --font-sans:    'Inter', sans-serif;
+  --font-heading: 'Syne', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  /* Component-level font aliases */
+  --font-display-xl:       'Syne', sans-serif;
+  --font-display-lg:       'Syne', sans-serif;
+  --font-display-lg-mobile:'Syne', sans-serif;
+  --font-headline-md:      'Syne', sans-serif;
+  --font-body-lg:          'Inter', sans-serif;
+  --font-body-md:          'Inter', sans-serif;
+  --font-label-mono:       'JetBrains Mono', monospace;
+
+  /* ── Typography Scale ── */
+  --text-display-xl: 68px;
+  --text-display-xl--line-height: 74px;
+  --text-display-xl--letter-spacing: -0.04em;
+  --text-display-lg: 48px;
+  --text-display-lg--line-height: 52px;
+  --text-display-lg--letter-spacing: -0.03em;
+  --text-display-lg-mobile: 36px;
+  --text-display-lg-mobile--line-height: 40px;
+  --text-display-lg-mobile--letter-spacing: -0.02em;
+  --text-headline-md: 32px;
+  --text-headline-md--line-height: 40px;
+  --text-headline-md--letter-spacing: -0.02em;
+  --text-body-lg: 17px;
+  --text-body-lg--line-height: 28px;
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+  --text-label-mono: 13px;
+  --text-label-mono--line-height: 16px;
+  --text-label-mono--letter-spacing: 0.05em;
+
+  /* ── Spacing ── */
+  --spacing-base:          4px;
+  --spacing-stack-sm:      8px;
+  --spacing-stack-md:      16px;
+  --spacing-stack-lg:      32px;
+  --spacing-gutter:        24px;
+  --spacing-margin-mobile: 20px;
+  --spacing-margin-desktop:64px;
+}
+
+/* ─────────────────────────────────────────────────────
+   COLOR TOKENS  (shadcn/Laravel format)
+   @theme inline → Tailwind utilities reference the
+   CSS custom properties defined in :root below
+   ───────────────────────────────────────────────────── */
+@theme inline {
+  /* ── Radii via :root ── */
+  --radius-sm:   calc(var(--radius) - 4px);
+  --radius-md:   calc(var(--radius) - 2px);
+  --radius-lg:   var(--radius);
+  --radius-xl:   calc(var(--radius) + 4px);
+  --radius-full: 9999px;
+
+  /* ── Core shadcn tokens ── */
+  --color-background:         var(--background);
+  --color-foreground:         var(--foreground);
+
+  --color-card:               var(--card);
+  --color-card-foreground:    var(--card-foreground);
+
+  --color-popover:            var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary:            var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary:          var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted:              var(--muted);
+  --color-muted-foreground:   var(--muted-foreground);
+
+  --color-accent:             var(--accent);
+  --color-accent-foreground:  var(--accent-foreground);
+
+  --color-destructive:        var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border:             var(--border);
+  --color-input:              var(--input);
+  --color-ring:               var(--ring);
+
+  /* ── MD3 surface aliases → map to shadcn equivalents ──
+     Keeps existing component classes working without changes */
+  --color-surface:                      var(--card);
+  --color-surface-dim:                  var(--muted);
+  --color-surface-bright:               var(--background);
+  --color-surface-container-lowest:     oklch(0.988 0.002 234);
+  --color-surface-container-low:        var(--secondary);
+  --color-surface-container:            var(--accent);
+  --color-surface-container-high:       oklch(0.930 0.010 234);
+  --color-surface-container-highest:    oklch(0.908 0.013 234);
+  --color-surface-tint:                 var(--primary);
+  --color-surface-variant:              var(--accent);
+  --color-on-surface:                   var(--foreground);
+  --color-on-surface-variant:           var(--muted-foreground);
+  --color-inverse-surface:              oklch(0.148 0.040 241);
+  --color-inverse-on-surface:           oklch(1 0 0);
+  --color-outline:                      var(--border);
+  --color-outline-variant:              var(--input);
+
+  /* ── MD3 primary aliases ── */
+  --color-primary-container:            var(--primary);
+  --color-on-primary:                   var(--primary-foreground);
+  --color-on-primary-container:         var(--primary-foreground);
+  --color-primary-fixed:                oklch(0.952 0.060 85);
+  --color-primary-fixed-dim:            oklch(0.900 0.120 85);
+  --color-on-primary-fixed:             var(--foreground);
+  --color-inverse-primary:              oklch(0.388 0.052 241);
+
+  /* ── MD3 secondary aliases ── */
+  --color-secondary-container:          var(--secondary);
+  --color-on-secondary:                 var(--secondary-foreground);
+  --color-on-secondary-container:       var(--secondary-foreground);
+  --color-secondary-fixed:              oklch(0.930 0.010 234);
+  --color-secondary-fixed-dim:          oklch(0.870 0.018 234);
+  --color-on-secondary-fixed:           var(--foreground);
+  --color-on-secondary-fixed-variant:   var(--muted-foreground);
+
+  /* ── Error ── */
+  --color-error:              var(--destructive);
+  --color-on-error:           var(--destructive-foreground);
+  --color-error-container:    oklch(0.960 0.040 30);
+  --color-on-error-container: var(--destructive);
+}
+
+/* ─────────────────────────────────────────────────────
+   :root  —  EpochWeave Light Theme
+   primary   → gold   #F5C120  ≈ oklch(0.832 0.165  85.2)
+   foreground→ slate  #3D5268  ≈ oklch(0.388 0.052 240.8)
+   background→ white  #FFFFFF  = oklch(1 0 0)
+   surface-2 → near-white gray  ≈ oklch(0.972 0.006 234)
+   ───────────────────────────────────────────────────── */
+:root {
+  --radius: 0.75rem;
+
+  --background:              oklch(1 0 0);
+  --foreground:              oklch(0.388 0.052 240.8);
+
+  --card:                    oklch(1 0 0);
+  --card-foreground:         oklch(0.388 0.052 240.8);
+
+  --popover:                 oklch(1 0 0);
+  --popover-foreground:      oklch(0.388 0.052 240.8);
+
+  --primary:                 oklch(0.832 0.165 85.2);
+  --primary-foreground:      oklch(0.388 0.052 240.8);
+
+  --secondary:               oklch(0.965 0.007 234.0);
+  --secondary-foreground:    oklch(0.388 0.052 240.8);
+
+  --muted:                   oklch(0.972 0.006 234.0);
+  --muted-foreground:        oklch(0.520 0.038 240.8);
+
+  --accent:                  oklch(0.952 0.009 234.0);
+  --accent-foreground:       oklch(0.388 0.052 240.8);
+
+  --destructive:             oklch(0.577 0.245 27.325);
+  --destructive-foreground:  oklch(1 0 0);
+
+  --border:                  oklch(0.912 0.012 234.0);
+  --input:                   oklch(0.912 0.012 234.0);
+  --ring:                    oklch(0.832 0.165 85.2);
+}
+
+.dark {
+  --background:              oklch(0.148 0.004 228.8);
+  --foreground:              oklch(0.965 0.007 234.0);
+  --card:                    oklch(0.218 0.008 240.0);
+  --card-foreground:         oklch(0.965 0.007 234.0);
+  --popover:                 oklch(0.218 0.008 240.0);
+  --popover-foreground:      oklch(0.965 0.007 234.0);
+  --primary:                 oklch(0.832 0.165 85.2);
+  --primary-foreground:      oklch(0.148 0.004 228.8);
+  --secondary:               oklch(0.274 0.006 286.0);
+  --secondary-foreground:    oklch(0.985 0 0);
+  --muted:                   oklch(0.275 0.011 216.9);
+  --muted-foreground:        oklch(0.723 0.014 214.4);
+  --accent:                  oklch(0.275 0.011 216.9);
+  --accent-foreground:       oklch(0.965 0.007 234.0);
+  --destructive:             oklch(0.704 0.191 22.216);
+  --destructive-foreground:  oklch(1 0 0);
+  --border:                  oklch(1 0 0 / 10%);
+  --input:                   oklch(1 0 0 / 15%);
+  --ring:                    oklch(0.832 0.165 85.2);
+}
+
+/* ─────────────────────────────────────────────────────
+   BASE LAYER
+   ───────────────────────────────────────────────────── */
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    border-color: var(--border);
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    overflow-x: hidden;
+  }
+}
+
+/* ─────────────────────────────────────────────────────
+   COMPONENT UTILITIES
+   ───────────────────────────────────────────────────── */
+.hover-glow:hover {
+  box-shadow: 0 8px 32px color-mix(in oklch, var(--primary), transparent 82%),
+              0 2px 8px  color-mix(in oklch, var(--foreground), transparent 92%);
+  border-color: var(--primary);
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+
+.border-glow {
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.automation-pulse {
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  animation: dotpulse 2s infinite ease-in-out;
+}
+
+@keyframes dotpulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.6); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-20px); }
+}
+
+.floating {
+  animation: float 6s infinite ease-in-out;
+}
+
+.glass-nav {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background-color: color-mix(in oklch, var(--background), transparent 10%);
+  box-shadow: 0 1px 0 color-mix(in oklch, var(--foreground), transparent 92%);
+}
+
+.pipeline-glow {
+  background: radial-gradient(
+    ellipse 70% 50% at 50% 50%,
+    color-mix(in oklch, var(--primary), transparent 93%) 0%,
+    transparent 70%
+  );
+}
+
+.pricing-pulse {
+  border: 1px solid var(--primary);
+  animation: borderPulse 3s infinite;
+}
+
+@keyframes borderPulse {
+  0%, 100% {
+    border-color: var(--primary);
+    box-shadow: 0 0 0px color-mix(in oklch, var(--primary), transparent 100%);
+  }
+  50% {
+    border-color: color-mix(in oklch, var(--primary), transparent 50%);
+    box-shadow: 0 0 20px color-mix(in oklch, var(--primary), transparent 85%);
+  }
+}
+
+.scroll-line {
+  transform-origin: left;
+  transition: transform 0.1s linear;
+}
+
+/* ── Marquee ── */
+.marquee-fade {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.marquee-track {
+  animation: marquee-scroll 35s linear infinite;
+}
+
+.marquee-wrap:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar       { width: 6px; height: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; border-radius: 9999px; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: var(--muted-foreground); border-radius: 9999px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+.custom-scrollbar { scrollbar-width: thin; scrollbar-color: var(--muted-foreground) transparent; }
