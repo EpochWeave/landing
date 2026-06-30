@@ -7,6 +7,8 @@ const submitted = ref(false)
 function submitForm() {
   submitted.value = true
 }
+
+const year = new Date().getFullYear()
 </script>
 
 <template>
@@ -98,7 +100,7 @@ function submitForm() {
         </div>
 
       </div>
-
+{{ year }}
       <div class="pt-8 border-t border-outline/10 flex flex-col md:flex-row justify-between items-center gap-4 text-on-surface-variant text-sm">
         <span>&copy; 2025 EpochWeave AI Automation. All rights reserved.</span>
         <div class="flex gap-6">

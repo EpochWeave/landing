@@ -15,7 +15,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 const steps = [
   { n: 1, title: 'Discovery Call',         desc: 'We map your current workflows and identify the biggest bottlenecks.', delay: 0 },
   { n: 2, title: 'Scope & Proposal',        desc: 'We design a custom automation roadmap with clear ROI projections.', delay: 150 },
-  { n: 3, title: 'We Build',               desc: 'Our engineers develop and stress-test your new automated ecosystem.', delay: 300 },
+  { n: 3, title: 'We Build',               desc: 'We develop and stress-test your new automated ecosystem.', delay: 300 },
   { n: 4, title: 'Delivery & Maintenance', desc: 'We launch your systems and provide ongoing support to keep them running.', delay: 450 },
 ]
 </script>

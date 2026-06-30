@@ -43,7 +43,7 @@ function hideOnError(e: Event) {
             :initial="{ opacity: 0, y: 20 }"
             :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }"
           >
-            <h1 class="font-display-xl text-display-xl text-on-surface mb-6 leading-tight">
+            <h1 class="font-display-lg text-display-lg text-on-surface mb-6 leading-tight">
               We automate the work.<br>
               <span class="text-primary-fixed-dim">You grow the business.</span>
             </h1>
