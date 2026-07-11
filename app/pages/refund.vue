@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'legal' })
 useHead({ title: 'Refund Policy — EpochWeave' })
+const { email, website } = useBooking()
 </script>
 
 <template>
@@ -59,7 +60,7 @@ useHead({ title: 'Refund Policy — EpochWeave' })
         <h2 class="text-xl font-bold text-on-surface flex items-center gap-3">
           <span class="text-primary font-label-mono text-sm">03</span> How to Request a Refund
         </h2>
-        <p>To request a refund or raise a concern about your project, contact us at <a href="mailto:hello@epochweave.io" class="text-primary hover:underline">hello@epochweave.io</a>.</p>
+        <p>To request a refund or raise a concern about your project, contact us at <a :href="`mailto:${email}`" class="text-primary hover:underline">{{ email }}</a>.</p>
         <p>Please include your name, company, project details, and the reason for your request. We will respond within 3 business days and work to resolve your concern fairly and promptly.</p>
       </section>
 
@@ -79,8 +80,8 @@ useHead({ title: 'Refund Policy — EpochWeave' })
           <span class="text-primary font-label-mono text-sm">05</span> Contact
         </h2>
         <p>
-          <a href="mailto:hello@epochweave.io" class="text-primary hover:underline">hello@epochweave.io</a> ·
-          <a href="https://epochweave.io" class="text-primary hover:underline">epochweave.io</a>
+          <a :href="`mailto:${email}`" class="text-primary hover:underline">{{ email }}</a> ·
+          <a :href="website" class="text-primary hover:underline">{{ website }}</a>
         </p>
       </section>
 

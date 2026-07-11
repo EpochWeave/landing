@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'legal' })
 useHead({ title: 'Privacy Policy — EpochWeave' })
+const { privacyEmail } = useBooking()
 </script>
 
 <template>
@@ -153,7 +154,7 @@ useHead({ title: 'Privacy Policy — EpochWeave' })
         <h2 class="text-xl font-bold text-on-surface flex items-center gap-3">
           <span class="text-primary font-label-mono text-sm">07</span> Your Rights
         </h2>
-        <p>Depending on your location, you may have the right to access, correct, delete, object to processing, or receive a portable copy of your data. To exercise any of these rights, email us at <a href="mailto:privacy@epochweave.io" class="text-primary hover:underline">privacy@epochweave.io</a>. We will respond within 30 days.</p>
+        <p>Depending on your location, you may have the right to access, correct, delete, object to processing, or receive a portable copy of your data. To exercise any of these rights, email us at <a :href="`mailto:${privacyEmail}`" class="text-primary hover:underline">{{ privacyEmail }}</a>. We will respond within 30 days.</p>
       </section>
 
       <hr class="border-outline/20" />
@@ -198,7 +199,7 @@ useHead({ title: 'Privacy Policy — EpochWeave' })
         <h2 class="text-xl font-bold text-on-surface flex items-center gap-3">
           <span class="text-primary font-label-mono text-sm">12</span> Contact
         </h2>
-        <p>For privacy-related questions or to exercise your rights, contact us at <a href="mailto:privacy@epochweave.io" class="text-primary hover:underline">privacy@epochweave.io</a>.</p>
+        <p>For privacy-related questions or to exercise your rights, contact us at <a :href="`mailto:${privacyEmail}`" class="text-primary hover:underline">{{ privacyEmail }}</a>.</p>
       </section>
 
     </div>

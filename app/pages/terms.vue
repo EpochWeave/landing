@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'legal' })
 useHead({ title: 'Terms of Service — EpochWeave' })
+const { legalEmail, website } = useBooking()
 </script>
 
 <template>
@@ -205,7 +206,7 @@ useHead({ title: 'Terms of Service — EpochWeave' })
         <h2 class="text-xl font-bold text-on-surface flex items-center gap-3">
           <span class="text-primary font-label-mono text-sm">13</span> Contact
         </h2>
-        <p>For questions about these Terms, contact us at <a href="mailto:legal@epochweave.io" class="text-primary hover:underline">legal@epochweave.io</a> or visit <a href="https://epochweave.io" class="text-primary hover:underline">epochweave.io</a>.</p>
+        <p>For questions about these Terms, contact us at <a :href="`mailto:${legalEmail}`" class="text-primary hover:underline">{{ legalEmail }}</a> or visit <a :href="website" class="text-primary hover:underline">{{ website }}</a>.</p>
       </section>
 
     </div>
