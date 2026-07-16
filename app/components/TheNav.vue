@@ -30,6 +30,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
         <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 text-body-md" href="#services">Services</a>
         <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 text-body-md" href="#how-it-works">How It Works</a>
         <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 text-body-md" href="#pricing">Pricing</a>
+        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 text-body-md" href="/blog">Blog</a>
         <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 text-body-md" href="#contact">Contact</a>
       </div>
 

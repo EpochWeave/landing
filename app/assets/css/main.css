@@ -3,6 +3,110 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ─────────────────────────────────────────────────────
+   BLOG CONTENT STYLES
+   Manual styling for markdown content since typography plugin has compatibility issues
+   ───────────────────────────────────────────────────── */
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  font-size: revert;
+  font-weight: revert;
+  line-height: revert;
+  margin-top: revert;
+  margin-bottom: revert;
+}
+
+.prose h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.prose h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 2.25rem;
+  margin-bottom: 0.75rem;
+  margin-top: 2rem;
+}
+
+.prose h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.prose h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.75rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.prose ul, .prose ol {
+  list-style: revert;
+  padding-left: revert;
+  margin-top: revert;
+  margin-bottom: revert;
+}
+
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prose li {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.prose p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prose strong {
+  font-weight: 600;
+}
+
+.prose a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.prose code {
+  background-color: var(--muted);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+}
+
+.prose pre {
+  background-color: var(--muted);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* ─────────────────────────────────────────────────────
    NON-COLOR TOKENS  (fonts · sizes · spacing · radii)
    Defined as plain values so Tailwind generates utilities
    ───────────────────────────────────────────────────── */
