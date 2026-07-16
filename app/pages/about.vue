@@ -1,6 +1,21 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'legal' })
-useHead({ title: 'About — EpochWeave' })
+useHead({
+  title: 'About EpochWeave | AI Workflow Automation Experts',
+  meta: [
+    {
+      name: 'description',
+      content: 'EpochWeave is an AI automation agency helping service businesses eliminate manual work through workflow automation, AI integration, and custom software solutions.'
+    },
+    { property: 'og:title', content: 'About EpochWeave | AI Workflow Automation Experts' },
+    { property: 'og:description', content: 'EpochWeave is an AI automation agency helping service businesses eliminate manual work through workflow automation, AI integration, and custom software solutions.' },
+    { property: 'og:url', content: 'https://epochweave.com/about' },
+    { property: 'og:image', content: 'https://epochweave.com/logos/logo-bg-none.png' },
+    { name: 'twitter:title', content: 'About EpochWeave | AI Workflow Automation Experts' },
+    { name: 'twitter:description', content: 'EpochWeave is an AI automation agency helping service businesses eliminate manual work through workflow automation, AI integration, and custom software solutions.' },
+    { name: 'twitter:image', content: 'https://epochweave.com/logos/logo-bg-none.png' }
+  ]
+})
 const { calLink } = useBooking()
 </script>
 

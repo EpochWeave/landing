@@ -1,6 +1,21 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'legal' })
-useHead({ title: 'Terms of Service — EpochWeave' })
+useHead({
+  title: 'Terms of Service | EpochWeave AI Automation Agency',
+  meta: [
+    {
+      name: 'description',
+      content: 'Read EpochWeave terms of service covering project fees, payment terms, cancellation policy, intellectual property, and client responsibilities.'
+    },
+    { property: 'og:title', content: 'Terms of Service | EpochWeave AI Automation Agency' },
+    { property: 'og:description', content: 'Read EpochWeave terms of service covering project fees, payment terms, cancellation policy, intellectual property, and client responsibilities.' },
+    { property: 'og:url', content: 'https://epochweave.com/terms' },
+    { property: 'og:image', content: 'https://epochweave.com/logos/logo-bg-none.png' },
+    { name: 'twitter:title', content: 'Terms of Service | EpochWeave AI Automation Agency' },
+    { name: 'twitter:description', content: 'Read EpochWeave terms of service covering project fees, payment terms, cancellation policy, intellectual property, and client responsibilities.' },
+    { name: 'twitter:image', content: 'https://epochweave.com/logos/logo-bg-none.png' }
+  ]
+})
 const { legalEmail, website } = useBooking()
 </script>
 

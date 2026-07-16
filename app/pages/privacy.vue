@@ -1,6 +1,21 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'legal' })
-useHead({ title: 'Privacy Policy — EpochWeave' })
+useHead({
+  title: 'Privacy Policy | EpochWeave AI Automation Agency',
+  meta: [
+    {
+      name: 'description',
+      content: 'EpochWeave privacy policy: how we collect, use, and protect your data. GDPR compliant. Learn about your data rights and our security practices.'
+    },
+    { property: 'og:title', content: 'Privacy Policy | EpochWeave AI Automation Agency' },
+    { property: 'og:description', content: 'EpochWeave privacy policy: how we collect, use, and protect your data. GDPR compliant. Learn about your data rights and our security practices.' },
+    { property: 'og:url', content: 'https://epochweave.com/privacy' },
+    { property: 'og:image', content: 'https://epochweave.com/logos/logo-bg-none.png' },
+    { name: 'twitter:title', content: 'Privacy Policy | EpochWeave AI Automation Agency' },
+    { name: 'twitter:description', content: 'EpochWeave privacy policy: how we collect, use, and protect your data. GDPR compliant. Learn about your data rights and our security practices.' },
+    { name: 'twitter:image', content: 'https://epochweave.com/logos/logo-bg-none.png' }
+  ]
+})
 const { privacyEmail } = useBooking()
 </script>
 
