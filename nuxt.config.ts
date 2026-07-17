@@ -1,4 +1,5 @@
 import tailwindcss from '@tailwindcss/vite'
+import { getBlogPosts } from './app/utils/blog'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -26,5 +27,14 @@ export default defineNuxtConfig({
   },
   site: {
     url: 'https://epochweave.com'
+  },
+  sitemap: {
+    urls: async () => {
+      const blogPosts = await getBlogPosts()
+      return blogPosts.map(post => ({
+        loc: `/blog/${post.slug}`,
+        lastmod: post.date
+      }))
+    }
   }
 })
