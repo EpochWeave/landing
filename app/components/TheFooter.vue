@@ -1,11 +1,45 @@
 <script setup lang="ts">
 const { email } = useBooking()
+const config = useRuntimeConfig()
 
-const form = reactive({ name: '', email: '', message: '' })
+const form = reactive({ name: '', email: '', message: '', honeypot: '' })
 const submitted = ref(false)
+const submitting = ref(false)
+const error = ref('')
 
-function submitForm() {
-  submitted.value = true
+async function submitForm() {
+  // Honeypot: bots tend to fill every field, humans never see this one
+  if (form.honeypot) {
+    submitted.value = true
+    return
+  }
+
+  submitting.value = true
+  error.value = ''
+
+  try {
+    const response = await $fetch<{ success: boolean }>('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: {
+        access_key: config.public.web3formsKey,
+        subject: `New contact form submission from ${form.name}`,
+        from_name: form.name,
+        name: form.name,
+        email: form.email,
+        message: form.message
+      }
+    })
+
+    if (response.success) {
+      submitted.value = true
+    } else {
+      error.value = 'Something went wrong. Please try again or email us directly.'
+    }
+  } catch {
+    error.value = 'Something went wrong. Please try again or email us directly.'
+  } finally {
+    submitting.value = false
+  }
 }
 
 const year = new Date().getFullYear()
@@ -90,11 +124,22 @@ const year = new Date().getFullYear()
               required
               class="w-full px-4 py-2.5 rounded-lg border border-outline/30 bg-surface text-on-surface text-sm placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary transition-colors resize-none"
             />
+            <input
+              v-model="form.honeypot"
+              type="text"
+              name="honeypot"
+              tabindex="-1"
+              autocomplete="off"
+              class="hidden"
+              aria-hidden="true"
+            />
+            <p v-if="error" class="text-sm text-red-500">{{ error }}</p>
             <button
               type="submit"
-              class="w-full py-2.5 bg-primary text-on-primary rounded-lg font-bold text-sm hover:scale-[1.02] transition-transform"
+              :disabled="submitting"
+              class="w-full py-2.5 bg-primary text-on-primary rounded-lg font-bold text-sm hover:scale-[1.02] transition-transform disabled:opacity-60 disabled:hover:scale-100"
             >
-              Send
+              {{ submitting ? 'Sending...' : 'Send' }}
             </button>
           </form>
         </div>

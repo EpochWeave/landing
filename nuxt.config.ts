@@ -6,6 +6,11 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   modules: ['@vueuse/motion/nuxt', '@nuxt/icon', '@nuxtjs/sitemap'],
+  runtimeConfig: {
+    public: {
+      web3formsKey: ''
+    }
+  },
   css: ['~/assets/css/main.css'],
   vite: {
     plugins: [tailwindcss()]
