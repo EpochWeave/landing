@@ -418,6 +418,53 @@
   to   { transform: translateX(-50%); }
 }
 
+/* ── Workflow / pipeline diagrams ── */
+.pipeline-dots {
+  background-image: radial-gradient(circle, rgba(61, 82, 104, 0.09) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.pipe-flow-v,
+.pipe-flow-h {
+  display: block;
+  opacity: 0.45;
+}
+.pipe-flow-v {
+  width: 2px;
+  background-image: repeating-linear-gradient(180deg, #3D5268 0, #3D5268 4px, transparent 4px, transparent 9px);
+  background-size: 2px 18px;
+  animation: pipe-flow-down 0.7s linear infinite;
+}
+.pipe-flow-h {
+  background-image: repeating-linear-gradient(90deg, #3D5268 0, #3D5268 4px, transparent 4px, transparent 9px);
+  background-size: 18px 1px;
+  animation: pipe-flow-right 0.7s linear infinite;
+}
+
+@keyframes pipe-flow-down {
+  from { background-position: 0 0; }
+  to   { background-position: 0 18px; }
+}
+@keyframes pipe-flow-right {
+  from { background-position: 0 0; }
+  to   { background-position: 18px 0; }
+}
+
+.pipe-pulse-ring {
+  animation: pipe-ring-pulse 2.4s ease-in-out infinite;
+}
+@keyframes pipe-ring-pulse {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50%      { opacity: 0.5; transform: scale(1.08); }
+}
+.pipe-blink {
+  animation: pipe-dot-blink 2s ease-in-out infinite;
+}
+@keyframes pipe-dot-blink {
+  0%, 100% { opacity: 0.4; }
+  50%      { opacity: 1; }
+}
+
 /* Custom scrollbar */
 .custom-scrollbar::-webkit-scrollbar       { width: 6px; height: 6px; }
 .custom-scrollbar::-webkit-scrollbar-track { background: transparent; border-radius: 9999px; }

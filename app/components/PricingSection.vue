@@ -87,7 +87,7 @@ const { calLink } = useBooking()
             <span class="text-on-surface-variant font-body-md">· Fixed project fee</span>
           </div>
           <div class="mb-8 p-4 bg-surface rounded-lg border border-primary/10 text-on-surface-variant text-sm">
-            + from <span class="text-primary font-semibold">$350/mo</span> — includes hosting, monitoring, and ongoing small workflow updates
+            + from <span class="text-primary font-semibold">$350/mo</span>, includes hosting, monitoring, and ongoing small workflow updates
           </div>
           <ul class="space-y-4 mb-10 flex-grow">
             <li class="flex items-start gap-3 text-on-surface-variant">

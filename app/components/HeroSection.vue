@@ -106,7 +106,7 @@ function hideOnError(e: Event) {
           <img
             v-for="tool in tools"
             :key="`a-${tool.slug}`"
-            :src="`https://cdn.simpleicons.org/${tool.slug}`"
+            :src="getBrandIconUrl(tool.slug)"
             :alt="tool.name"
             class="h-7 w-auto object-contain opacity-40 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300 cursor-default"
             @error="hideOnError"
@@ -115,7 +115,7 @@ function hideOnError(e: Event) {
           <img
             v-for="tool in tools"
             :key="`b-${tool.slug}`"
-            :src="`https://cdn.simpleicons.org/${tool.slug}`"
+            :src="getBrandIconUrl(tool.slug)"
             :alt="tool.name"
             aria-hidden="true"
             class="h-7 w-auto object-contain opacity-40 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300 cursor-default"

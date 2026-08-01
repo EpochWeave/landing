@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { mainNavItems } from '../utils/navigation'
+
 const { calLink } = useBooking()
 const isScrolled = ref(false)
+const navLinkClass = 'text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 text-body-md'
 
 function onScroll() {
   isScrolled.value = window.scrollY > 50
@@ -27,11 +30,10 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
       </a>
 
       <div class="hidden md:flex gap-8 items-center">
-        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 text-body-md" href="#services">Services</a>
-        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 text-body-md" href="#how-it-works">How It Works</a>
-        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 text-body-md" href="#pricing">Pricing</a>
-        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 text-body-md" href="/blog">Blog</a>
-        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 text-body-md" href="#contact">Contact</a>
+        <template v-for="item in mainNavItems" :key="item.label">
+          <NuxtLink v-if="item.path" :to="item.path" :class="navLinkClass">{{ item.label }}</NuxtLink>
+          <a v-else :href="`#${item.anchor}`" :class="navLinkClass">{{ item.label }}</a>
+        </template>
       </div>
 
       <a

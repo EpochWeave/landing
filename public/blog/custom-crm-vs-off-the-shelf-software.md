@@ -6,15 +6,15 @@ readTime: '10 min read'
 category: 'Strategy'
 ---
 
-# The CRM Dilemma: Buy or Build?
+## The CRM Dilemma: Buy or Build?
 
 Every growing service business eventually faces the same question: "Should we use an existing CRM or build something custom?"
 
-It's not a trivial decision. Get it wrong and you're stuck with software that doesn't fit your workflow, paying monthly fees for features you don't use, or worse—building a custom solution that becomes a maintenance nightmare.
+It's not a trivial decision. Get it wrong and you're stuck with software that doesn't fit your workflow, paying monthly fees for features you don't use, or worse, building a custom solution that becomes a maintenance nightmare.
 
 Let's break down when to buy, when to build, and how to make the right choice for your business.
 
-## The Case for Off-the-Shelf CRM
+### The Case for Off-the-Shelf CRM
 
 **When it works:**
 - Your sales process is relatively standard
@@ -43,7 +43,7 @@ Let's break down when to buy, when to build, and how to make the right choice fo
 - Notion (flexible, affordable)
 - Airtable (database-like, customizable)
 
-## The Case for Custom CRM
+### The Case for Custom CRM
 
 **When it works:**
 - Your sales process is unique to your business
@@ -68,11 +68,11 @@ Let's break down when to buy, when to build, and how to make the right choice fo
 - **Limited ecosystem:** Need to build your own integrations
 - **Technical dependency:** Need someone who understands the system
 
-## The Decision Framework
+### The Decision Framework
 
 Use this framework to make the right choice:
 
-### 1. Process Complexity Score
+#### 1. Process Complexity Score
 
 Rate your sales process on these factors (1-5 each):
 
@@ -86,7 +86,7 @@ Rate your sales process on these factors (1-5 each):
 **Score 11-15:** Consider hybrid approach
 **Score 16-25:** Build custom
 
-### 2. Cost Analysis
+#### 2. Cost Analysis
 
 Calculate your current software costs:
 
@@ -105,7 +105,7 @@ Calculate your current software costs:
 
 If break-even is under 12 months and your process is complex, custom makes sense.
 
-### 3. Growth Trajectory
+#### 3. Growth Trajectory
 
 **Buy off-the-shelf if:**
 - You're early-stage (0-10 clients)
@@ -119,7 +119,7 @@ If break-even is under 12 months and your process is complex, custom makes sense
 - Software limitations are slowing growth
 - You have budget to invest in infrastructure
 
-## The Hybrid Approach (Often the Best Choice)
+### The Hybrid Approach (Often the Best Choice)
 
 You don't have to choose exclusively. Many successful businesses use a hybrid:
 
@@ -138,7 +138,7 @@ You don't have to choose exclusively. Many successful businesses use a hybrid:
 
 This gives you the best of both worlds: speed where it matters, customization where it counts.
 
-## Real-World Examples
+### Real-World Examples
 
 **Example 1: Agency that bought off-the-shelf**
 - Process: Standard lead → proposal → close
@@ -158,7 +158,7 @@ This gives you the best of both worlds: speed where it matters, customization wh
 - Result: Team frustrated, process compromised, eventually built custom anyway
 - Verdict: Wrong choice, expensive lesson
 
-## Implementation Timeline
+### Implementation Timeline
 
 **If buying off-the-shelf:**
 - Week 1: Research and select tool
@@ -173,7 +173,7 @@ This gives you the best of both worlds: speed where it matters, customization wh
 - Week 7: Data migration and training
 - Week 8: Launch
 
-## The Decision Checklist
+### The Decision Checklist
 
 Before deciding, ask yourself:
 
@@ -186,7 +186,7 @@ Before deciding, ask yourself:
 
 If you can't answer yes to most of these, buy off-the-shelf.
 
-## Getting Started
+### Getting Started
 
 **If you're leaning toward buying:**
 1. Try HubSpot free tier first
@@ -201,7 +201,7 @@ If you can't answer yes to most of these, buy off-the-shelf.
 4. Run the numbers on break-even timeline
 5. Start with MVP, iterate from there
 
-## The Bottom Line
+### The Bottom Line
 
 The right choice depends on your specific situation, but here's the general rule:
 
@@ -209,7 +209,7 @@ The right choice depends on your specific situation, but here's the general rule
 - **Complex process, software costs are high, process is proven** → Build custom
 - **Somewhere in between** → Hybrid approach
 
-The mistake isn't choosing wrong—it's not revisiting the decision as your business grows. Re-evaluate annually. What made sense at 10 clients might not make sense at 50.
+The mistake isn't choosing wrong. It's not revisiting the decision as your business grows. Re-evaluate annually. What made sense at 10 clients might not make sense at 50.
 
 ---
 
