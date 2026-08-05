@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { mainNavItems } from '../utils/navigation'
 
-const { calLink } = useBooking()
 const isScrolled = ref(false)
 const navLinkClass = 'text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 text-body-md'
 
@@ -37,12 +36,10 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
       </div>
 
       <a
-        :href="calLink"
-        target="_blank"
-        rel="noopener"
+        href="/#contact"
         class="bg-primary-container text-on-primary px-6 py-3 rounded-lg font-bold hover:scale-95 transition-transform duration-300 active:scale-90"
       >
-        Book a Free Call
+        Contact
       </a>
     </div>
   </nav>

@@ -59,19 +59,19 @@ function hideOnError(e: Event) {
             class="flex flex-wrap gap-4"
           >
             <a
-              :href="calLink"
-              target="_blank"
-              rel="noopener"
+              href="#contact"
               class="bg-primary-container text-on-primary px-8 py-4 rounded-lg font-bold hover:scale-105 transition-transform flex items-center gap-2"
             >
-              Book a Free Call
+              Contact
               <Icon name="material-symbols:arrow-forward" class="text-lg" />
             </a>
             <a
-              href="#services"
+              :href="calLink"
+              target="_blank"
+              rel="noopener"
               class="border border-outline px-8 py-4 rounded-lg font-bold hover:bg-surface-container-high transition-colors text-on-surface"
             >
-              See Our Services
+              Book a Free Call
             </a>
           </div>
         </div>

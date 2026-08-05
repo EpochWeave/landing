@@ -3,8 +3,6 @@ import { marked } from 'marked'
 import { getBlogPostBySlug, getBlogPostContent } from '~/utils/blog'
 
 const route = useRoute()
-const { calLink } = useBooking()
-
 const post = await getBlogPostBySlug(route.params.slug as string)
 
 if (!post) {
@@ -75,12 +73,10 @@ useHead({
               Book a free 30-minute discovery call and we'll show you exactly where you can eliminate manual work in your business.
             </p>
             <a
-              :href="calLink"
-              target="_blank"
-              rel="noopener"
+              href="#contact"
               class="inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-lg font-bold hover:scale-105 transition-transform"
             >
-              Book Your Free Call
+              Contact
               <Icon name="material-symbols:arrow-forward" class="text-lg" />
             </a>
           </div>

@@ -1,5 +1,14 @@
 <script setup lang="ts">
 const { calLink } = useBooking()
+
+useHead({
+  script: [
+    {
+      src: 'https://js-eu1.hsforms.net/forms/embed/149044632.js',
+      defer: true,
+    },
+  ],
+})
 </script>
 
 <template>
@@ -17,16 +26,24 @@ const { calLink } = useBooking()
         Ready to stop doing work your tools should handle?
       </h2>
       <p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
-        Book a free 30-minute discovery call and we'll show you exactly where you can shave 10-20 hours off your team's week.
+        Send us a quick message and we'll show you exactly where you can shave 10-20 hours off your team's week.
       </p>
+      <div class="max-w-2xl mx-auto">
+        <div
+          class="hs-form-frame"
+          data-region="eu1"
+          data-form-id="835bd968-6951-4cba-a8bc-065560548482"
+          data-portal-id="149044632"
+        ></div>
+      </div>
       <a
         :href="calLink"
         target="_blank"
         rel="noopener"
-        class="bg-primary text-on-primary px-12 py-5 rounded-lg text-xl font-bold hover:scale-105 transition-transform inline-flex items-center gap-4 shadow-[0_0_40px_rgba(245,197,24,0.2)]"
+        class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors mt-8 text-sm font-medium"
       >
-        Book Your Free Call
-        <Icon name="material-symbols:arrow-right-alt" class="text-2xl" />
+        Prefer to talk? Book a free call
+        <Icon name="material-symbols:arrow-right-alt" class="text-base" />
       </a>
     </div>
   </section>

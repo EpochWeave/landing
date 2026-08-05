@@ -2,7 +2,6 @@
 import type { CaseStudy } from '../../types/caseStudy'
 
 defineProps<{ study: CaseStudy }>()
-const { calLink } = useBooking()
 </script>
 
 <template>
@@ -23,12 +22,10 @@ const { calLink } = useBooking()
     <p class="text-primary font-semibold mb-8">{{ study.outcome }}</p>
 
     <a
-      :href="calLink"
-      target="_blank"
-      rel="noopener"
+      href="#contact"
       class="w-fit py-3 px-6 border border-outline rounded-lg font-bold hover:bg-surface-container-high transition-colors text-center text-sm"
     >
-      Talk About a Build Like This
+      Contact
     </a>
   </div>
 </template>

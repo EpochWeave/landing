@@ -16,7 +16,6 @@ useHead({
     { name: 'twitter:image', content: 'https://epochweave.com/logos/logo-bg-none.png' }
   ]
 })
-const { calLink } = useBooking()
 </script>
 
 <template>
@@ -112,12 +111,10 @@ const { calLink } = useBooking()
           <h3 class="text-xl font-bold text-on-surface mb-4">Ready to talk?</h3>
           <p class="text-on-surface-variant mb-6 leading-relaxed">We will map out exactly what we would automate in your business and what it would cost. No pressure. No jargon. Just an honest conversation about what is possible.</p>
           <a
-            :href="calLink"
-            target="_blank"
-            rel="noopener"
+            href="#contact"
             class="inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-lg font-bold hover:scale-105 transition-transform self-start"
           >
-            Book a free 30-minute call
+            Contact
             <Icon name="material-symbols:arrow-forward" class="text-base" />
           </a>
         </div>

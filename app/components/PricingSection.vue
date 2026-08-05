@@ -60,12 +60,10 @@ const { calLink } = useBooking()
             </li>
           </ul>
           <a
-            :href="calLink"
-            target="_blank"
-            rel="noopener"
+            href="#contact"
             class="w-full py-4 border border-outline rounded-lg font-bold hover:bg-surface-container-high transition-colors text-center"
           >
-            Book a Free Discovery Call
+            Contact
           </a>
         </div>
 
@@ -116,12 +114,10 @@ const { calLink } = useBooking()
             </li>
           </ul>
           <a
-            :href="calLink"
-            target="_blank"
-            rel="noopener"
+            href="#contact"
             class="w-full py-4 bg-primary text-on-primary rounded-lg font-bold hover:scale-[1.02] transition-transform text-center"
           >
-            Book a Free Discovery Call
+            Contact
           </a>
         </div>
 
@@ -169,12 +165,10 @@ const { calLink } = useBooking()
             </li>
           </ul>
           <a
-            :href="calLink"
-            target="_blank"
-            rel="noopener"
+            href="#contact"
             class="w-full py-4 border border-outline rounded-lg font-bold hover:bg-surface-container-high transition-colors text-center"
           >
-            Book a Free Discovery Call
+            Contact
           </a>
         </div>
 
