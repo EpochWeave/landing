@@ -7,8 +7,7 @@ const blogPosts: BlogPost[] = [
     description: 'Learn how to set up automated lead follow-up sequences that respond in minutes, not hours, while still feeling personal and human.',
     date: '2026-07-16',
     readTime: '8 min read',
-    category: 'Lead Generation',
-    contentPath: '/blog/how-to-automate-lead-follow-up.md'
+    category: 'Lead Generation'
   },
   {
     slug: 'reduce-manual-data-entry-small-business',
@@ -16,8 +15,7 @@ const blogPosts: BlogPost[] = [
     description: 'Stop wasting hours on data entry. Here\'s how small businesses are eliminating manual data work with simple automations.',
     date: '2026-07-16',
     readTime: '7 min read',
-    category: 'Operations',
-    contentPath: '/blog/reduce-manual-data-entry-small-business.md'
+    category: 'Operations'
   },
   {
     slug: 'custom-crm-vs-off-the-shelf-software',
@@ -25,8 +23,7 @@ const blogPosts: BlogPost[] = [
     description: 'Should you build a custom CRM or buy an existing solution? This guide breaks down the costs, benefits, and decision factors.',
     date: '2026-07-16',
     readTime: '10 min read',
-    category: 'Strategy',
-    contentPath: '/blog/custom-crm-vs-off-the-shelf-software.md'
+    category: 'Strategy'
   },
   {
     slug: 'ai-tools-for-agencies',
@@ -34,32 +31,16 @@ const blogPosts: BlogPost[] = [
     description: 'Discover the AI tools that are helping agencies scale their operations without adding headcount, from content generation to client management.',
     date: '2026-07-16',
     readTime: '9 min read',
-    category: 'AI & Automation',
-    contentPath: '/blog/ai-tools-for-agencies.md'
+    category: 'AI & Automation'
   }
 ]
 
-export async function getBlogPosts(): Promise<BlogPost[]> {
-  return blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+// Kept free of Vite-only APIs so nuxt.config.ts can import it for the sitemap
+// and prerender routes. Article bodies are loaded in blogContent.ts.
+export function getBlogPosts(): BlogPost[] {
+  return [...blogPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
-export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
+export function getBlogPostBySlug(slug: string): BlogPost | null {
   return blogPosts.find(post => post.slug === slug) || null
-}
-
-export async function getBlogPostContent(contentPath: string): Promise<string> {
-  try {
-    const baseUrl = 'http://localhost:3000'
-    const response = await fetch(`${baseUrl}${contentPath}`)
-    if (!response.ok) {
-      throw new Error(`Failed to fetch: ${response.statusText}`)
-    }
-    const text = await response.text()
-
-    const contentWithoutFrontmatter = text.replace(/^---[\s\S]*?---/, '')
-    return contentWithoutFrontmatter
-  } catch (error) {
-    console.error('Error fetching blog content:', error)
-    return ''
-  }
 }

@@ -1,5 +1,18 @@
 <script setup lang="ts">
-const { calLink } = useBooking()
+const { calLink, email } = useBooking()
+
+// Show our own form if the HubSpot embed hasn't rendered after a few seconds
+// (ad blockers commonly block hsforms.net).
+const formFrame = ref<HTMLElement>()
+const showFallback = ref(false)
+let fallbackTimer: ReturnType<typeof setTimeout> | undefined
+
+onMounted(() => {
+  fallbackTimer = setTimeout(() => {
+    if (!formFrame.value?.querySelector('iframe, form')) showFallback.value = true
+  }, 6000)
+})
+onUnmounted(() => clearTimeout(fallbackTimer))
 
 useHead({
   script: [
@@ -29,12 +42,22 @@ useHead({
         Send us a quick message and we'll show you exactly where you can shave 10-20 hours off your team's week.
       </p>
       <div class="max-w-2xl mx-auto">
+        <ContactForm v-if="showFallback" />
         <div
+          v-show="!showFallback"
+          ref="formFrame"
           class="hs-form-frame"
           data-region="eu1"
           data-form-id="835bd968-6951-4cba-a8bc-065560548482"
           data-portal-id="149044632"
         ></div>
+        <!-- Browsers parse <noscript> as text when JS is on, so skip hydration checks here -->
+        <noscript data-allow-mismatch="children">
+          <p class="text-on-surface-variant">
+            Our contact form needs JavaScript. Email us instead at
+            <a :href="`mailto:${email}`" class="text-primary font-semibold hover:underline">{{ email }}</a>.
+          </p>
+        </noscript>
       </div>
       <a
         :href="calLink"

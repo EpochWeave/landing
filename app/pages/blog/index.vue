@@ -1,30 +1,20 @@
 <script setup lang="ts">
 import { getBlogPosts } from '~/utils/blog'
 
-const { data: posts } = await useAsyncData('blog', () => getBlogPosts())
+const posts = getBlogPosts()
 
-useHead({
+usePageSeo({
   title: 'Blog | EpochWeave AI Automation Agency',
-  meta: [
-    {
-      name: 'description',
-      content: 'Learn about workflow automation, AI integration, and custom software solutions for service businesses. Practical guides and insights from EpochWeave.'
-    },
-    { property: 'og:title', content: 'Blog | EpochWeave AI Automation Agency' },
-    { property: 'og:description', content: 'Learn about workflow automation, AI integration, and custom software solutions for service businesses.' },
-    { property: 'og:url', content: 'https://epochweave.com/blog' },
-    { property: 'og:image', content: 'https://epochweave.com/logos/logo-bg-none.png' },
-    { name: 'twitter:title', content: 'Blog | EpochWeave AI Automation Agency' },
-    { name: 'twitter:description', content: 'Learn about workflow automation, AI integration, and custom software solutions for service businesses.' },
-    { name: 'twitter:image', content: 'https://epochweave.com/logos/logo-bg-none.png' }
-  ]
+  description: 'Practical guides on workflow automation, AI integration, and custom software for service businesses, written by EpochWeave.',
+  path: '/blog'
 })
 </script>
 
 <template>
   <div class="bg-background text-on-surface">
     <TheNav />
-    
+
+    <main>
     <section class="py-20">
       <div class="max-w-7xl mx-auto px-margin-desktop">
         <div class="max-w-3xl">
@@ -48,11 +38,11 @@ useHead({
             :to="`/blog/${post.slug}`"
             class="group bg-surface-container border border-outline/30 rounded-xl p-8 hover-glow transition-all"
           >
-            <div class="flex items-center gap-3 mb-4">
+            <div class="flex flex-wrap items-center gap-3 mb-4">
               <span class="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wider">
                 {{ post.category }}
               </span>
-              <span class="text-sm text-on-surface-variant">{{ post.date }}</span>
+              <time :datetime="post.date" class="text-sm text-on-surface-variant">{{ post.date }}</time>
               <span class="text-sm text-on-surface-variant">· {{ post.readTime }}</span>
             </div>
             <h2 class="text-2xl font-bold text-on-surface mb-3 group-hover:text-primary transition-colors">
@@ -69,6 +59,7 @@ useHead({
         </div>
       </div>
     </section>
+    </main>
 
     <CtaSection />
     <TheFooter />

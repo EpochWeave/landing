@@ -3,7 +3,7 @@ import { caseStudies } from '../utils/caseStudies'
 </script>
 
 <template>
-  <section class="py-24 bg-surface-container-lowest" id="case-studies">
+  <section class="py-24 bg-surface-container-lowest" id="example-builds">
     <div class="max-w-7xl mx-auto px-margin-desktop">
 
       <div
@@ -12,10 +12,10 @@ import { caseStudies } from '../utils/caseStudies'
         :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
         class="text-center mb-20"
       >
-        <span class="font-label-mono text-label-mono text-primary mb-4 block">CASE STUDIES</span>
-        <h2 class="font-headline-md text-headline-md mb-4">What we build.<br>The kind of problems nobody else solves.</h2>
+        <span class="font-label-mono text-label-mono text-primary mb-4 block">EXAMPLE BUILDS</span>
+        <h2 class="font-headline-md text-headline-md mb-4">Example builds we can set up for you</h2>
         <p class="text-on-surface-variant max-w-xl mx-auto">
-          Example builds: the kind of automation we set up during onboarding, shaped around whatever tools you're already using.
+          These are illustrations of the kind of automation we build, adapted to the tools you already use. They are not client case studies.
         </p>
       </div>
 

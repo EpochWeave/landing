@@ -48,7 +48,7 @@ function hideOnError(e: Event) {
               <span class="text-primary-fixed-dim">You grow the business.</span>
             </h1>
             <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">
-              EpochWeave builds workflow automations, AI integrations, and custom internal systems for service businesses that want to scale without the headcount overhead.
+              EpochWeave builds workflow automations, AI integrations, and custom internal systems for small service businesses that want to grow without hiring more people for admin.
             </p>
           </div>
 
@@ -62,7 +62,7 @@ function hideOnError(e: Event) {
               href="#contact"
               class="bg-primary-container text-on-primary px-8 py-4 rounded-lg font-bold hover:scale-105 transition-transform flex items-center gap-2"
             >
-              Contact
+              Send a Message
               <Icon name="material-symbols:arrow-forward" class="text-lg" />
             </a>
             <a
@@ -111,12 +111,12 @@ function hideOnError(e: Event) {
             class="h-7 w-auto object-contain opacity-40 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300 cursor-default"
             @error="hideOnError"
           />
-          <!-- Set 2 — duplicate for seamless loop -->
+          <!-- Set 2: duplicate for the seamless infinite loop, hidden from assistive tech -->
           <img
             v-for="tool in tools"
             :key="`b-${tool.slug}`"
             :src="getBrandIconUrl(tool.slug)"
-            :alt="tool.name"
+            alt=""
             aria-hidden="true"
             class="h-7 w-auto object-contain opacity-40 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300 cursor-default"
             @error="hideOnError"

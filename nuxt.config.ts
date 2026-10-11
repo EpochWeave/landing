@@ -1,5 +1,8 @@
 import tailwindcss from '@tailwindcss/vite'
 import { getBlogPosts } from './app/utils/blog'
+import { site } from './app/utils/site'
+
+const blogRoutes = getBlogPosts().map(post => `/blog/${post.slug}`)
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -30,16 +33,27 @@ export default defineNuxtConfig({
       ]
     }
   },
+  // Every route is prerendered to static HTML (with full blog content) on
+  // both `nuxt build` and `nuxt generate`.
+  routeRules: {
+    '/**': { prerender: true }
+  },
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/', '/sitemap.xml', ...blogRoutes],
+      failOnError: true
+    }
+  },
   site: {
-    url: 'https://epochweave.com'
+    url: site.url,
+    name: site.name,
+    trailingSlash: false
   },
   sitemap: {
-    urls: async () => {
-      const blogPosts = await getBlogPosts()
-      return blogPosts.map(post => ({
-        loc: `/blog/${post.slug}`,
-        lastmod: post.date
-      }))
-    }
+    urls: () => getBlogPosts().map(post => ({
+      loc: `/blog/${post.slug}`,
+      lastmod: post.date
+    }))
   }
 })

@@ -1,7 +1,12 @@
 <script setup lang="ts">
+const LEADS_COLD_PCT = 60
+const HOURS_LOST = 15
+
+// Final values are rendered server-side so crawlers and no-JS visitors never see 0.
+// On the client, the count-up only replays if the stats are still off-screen.
 const statsEl = ref<HTMLElement>()
-const count60 = ref(0)
-const count15 = ref(0)
+const count60 = ref(LEADS_COLD_PCT)
+const count15 = ref(HOURS_LOST)
 
 function animateCounter(target: number, setter: (v: number) => void) {
   const steps = 80
@@ -12,7 +17,7 @@ function animateCounter(target: number, setter: (v: number) => void) {
     if (current >= target) {
       setter(target)
     } else {
-      setter(Math.ceil(current))
+      setter(Math.max(1, Math.ceil(current)))
       requestAnimationFrame(tick)
     }
   }
@@ -20,15 +25,22 @@ function animateCounter(target: number, setter: (v: number) => void) {
 }
 
 onMounted(() => {
-  if (!statsEl.value) return
+  const el = statsEl.value
+  if (!el || !('IntersectionObserver' in window)) return
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  if (el.getBoundingClientRect().top < window.innerHeight) return
+
+  // Off-screen: start low (never 0) and count up once the stats scroll into view.
+  count60.value = 1
+  count15.value = 1
   const io = new IntersectionObserver((entries) => {
     if (entries[0]?.isIntersecting) {
-      animateCounter(60, v => (count60.value = v))
-      animateCounter(15, v => (count15.value = v))
+      animateCounter(LEADS_COLD_PCT, v => (count60.value = v))
+      animateCounter(HOURS_LOST, v => (count15.value = v))
       io.disconnect()
     }
   }, { threshold: 0.3 })
-  io.observe(statsEl.value)
+  io.observe(el)
 })
 </script>
 
@@ -45,7 +57,7 @@ onMounted(() => {
           class="md:col-span-2 relative overflow-hidden rounded-xl border border-outline/30 bg-surface-container group"
         >
           <img
-            alt="Overwhelmed worker"
+            alt="Team working through a backlog of manual tasks"
             src="/images/bento-team.jpg"
             class="absolute inset-0 w-full h-full object-cover opacity-15 group-hover:scale-110 transition-transform duration-700"
           />
@@ -87,7 +99,7 @@ onMounted(() => {
           class="relative overflow-hidden rounded-xl border border-outline/30 bg-surface-container group"
         >
           <img
-            alt="Missed notifications"
+            alt="Phone showing a stack of missed notifications"
             src="/images/bento-notifications.jpg"
             class="absolute inset-0 w-full h-full object-cover opacity-15"
           />

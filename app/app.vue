@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import { site, absoluteUrl } from '~/utils/site'
+
 useHead({
   htmlAttrs: { lang: 'en' },
   link: [
-    { rel: 'icon', type: 'image/jpeg', href: '/logos/logo-bg-none.png' }
+    { rel: 'icon', type: 'image/png', href: '/logos/logo-bg-none.png' }
   ],
   script: [
     {
@@ -24,10 +26,12 @@ useHead({
         '@type': 'Organization',
         name: 'EpochWeave',
         description: 'AI automation agency building workflow automations, AI integrations, and custom internal systems for service businesses.',
-        url: 'https://epochweave.com',
-        logo: 'https://epochweave.com/logos/logo-bg-none.png',
+        url: absoluteUrl('/'),
+        logo: absoluteUrl(site.defaultImage),
+        email: site.email,
+        founder: { '@type': 'Person', name: site.ownerName },
         sameAs: [
-          'https://web.facebook.com/profile.php?id=61592023613388'
+          site.facebookUrl
         ],
         contactPoint: {
           '@type': 'ContactPoint',
@@ -57,7 +61,6 @@ useHead({
   ],
   meta: [
     { property: 'og:site_name', content: 'EpochWeave' },
-    { property: 'og:type', content: 'website' },
     { property: 'og:locale', content: 'en_US' },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:site', content: '@epochweave' }
@@ -67,5 +70,7 @@ useHead({
 
 <template>
   <NuxtRouteAnnouncer />
-  <NuxtPage />
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>

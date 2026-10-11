@@ -13,9 +13,9 @@ const { calLink } = useBooking()
         class="text-center mb-16"
       >
         <span class="font-label-mono text-label-mono text-primary mb-4 block">PRICING</span>
-        <h2 class="font-headline-md text-headline-md mb-4">Simple, honest pricing.<br>Scoped to your actual needs.</h2>
+        <h2 class="font-headline-md text-headline-md mb-4">A one-off build fee.<br>Plus an optional monthly care plan.</h2>
         <p class="text-on-surface-variant max-w-xl mx-auto">
-          Every project starts with a free discovery call where we map your workflow and give you a fixed price before any work begins. No hourly billing. No surprises.
+          Every project starts with a free discovery call. We map your workflow and quote one agreed build fee before any work begins. After delivery, you can add a monthly care plan for hosting, monitoring, and small updates. No hourly billing.
         </p>
       </div>
 
@@ -32,11 +32,11 @@ const { calLink } = useBooking()
             Start Here
           </div>
           <span class="font-label-mono text-label-mono text-primary mb-3 block">QUICK WIN AUTOMATION</span>
-          <h3 class="text-2xl font-bold mb-2">One workflow.<br>Fixed and delivered fast.</h3>
+          <h3 class="text-2xl font-bold mb-2">One workflow.<br>Delivered fast.</h3>
           <p class="text-on-surface-variant mb-8">For businesses that want a single manual task automated, without a big commitment.</p>
           <div class="mb-3">
             <div class="text-4xl font-bold text-on-surface">$297</div>
-            <span class="text-on-surface-variant font-body-md">· One-time, no retainer</span>
+            <span class="text-on-surface-variant font-body-md">· One-off build fee, no care plan needed</span>
           </div>
           <div class="mb-8 p-4 bg-surface rounded-lg border border-outline/10 text-on-surface-variant text-sm">
             Want another workflow after this? <span class="text-primary font-semibold">$250-400</span> each, no commitment.
@@ -82,10 +82,10 @@ const { calLink } = useBooking()
           <p class="text-on-surface-variant mb-8">For businesses that want their existing tools working together, automatically.</p>
           <div class="mb-3">
             <div class="text-4xl font-bold text-primary">$1,500</div>
-            <span class="text-on-surface-variant font-body-md">· Fixed project fee</span>
+            <span class="text-on-surface-variant font-body-md">· One-off build fee</span>
           </div>
           <div class="mb-8 p-4 bg-surface rounded-lg border border-primary/10 text-on-surface-variant text-sm">
-            + from <span class="text-primary font-semibold">$350/mo</span>, includes hosting, monitoring, and ongoing small workflow updates
+            Optional care plan from <span class="text-primary font-semibold">$350/mo</span>: hosting, monitoring, and ongoing small workflow updates
           </div>
           <ul class="space-y-4 mb-10 flex-grow">
             <li class="flex items-start gap-3 text-on-surface-variant">
@@ -102,7 +102,7 @@ const { calLink } = useBooking()
             </li>
             <li class="flex items-start gap-3 text-on-surface-variant">
               <Icon name="material-symbols:check-circle" class="text-primary shrink-0" />
-              AI handling qualification, drafting, or summarising
+              AI handling qualification, drafting, or summarizing
             </li>
             <li class="flex items-start gap-3 text-on-surface-variant">
               <Icon name="material-symbols:check-circle" class="text-primary shrink-0" />
@@ -110,7 +110,7 @@ const { calLink } = useBooking()
             </li>
             <li class="flex items-start gap-3 text-on-surface-variant">
               <Icon name="material-symbols:check-circle" class="text-primary shrink-0" />
-              Dedicated hosting, monitored and maintained monthly
+              Dedicated hosting and monitoring with the care plan
             </li>
           </ul>
           <a
@@ -133,10 +133,10 @@ const { calLink } = useBooking()
           <p class="text-on-surface-variant mb-8">For businesses that need software shaped to them, not the other way around.</p>
           <div class="mb-3">
             <div class="text-4xl font-bold text-on-surface">$3,000</div>
-            <span class="text-on-surface-variant font-body-md">· Fixed project fee</span>
+            <span class="text-on-surface-variant font-body-md">· One-off build fee</span>
           </div>
           <div class="mb-8 p-4 bg-surface rounded-lg border border-outline/10 text-on-surface-variant text-sm">
-            + from <span class="text-primary font-semibold">$500/mo</span> maintenance and hosting
+            Optional care plan from <span class="text-primary font-semibold">$500/mo</span>: maintenance and hosting
           </div>
           <ul class="space-y-4 mb-10 flex-grow">
             <li class="flex items-start gap-3 text-on-surface-variant">
@@ -172,6 +172,12 @@ const { calLink } = useBooking()
           </a>
         </div>
 
+      </div>
+
+      <!-- Guarantee -->
+      <div class="mt-12 max-w-2xl mx-auto flex items-start gap-3 bg-primary/5 border border-primary/20 rounded-xl p-5 text-on-surface">
+        <Icon name="material-symbols:verified-user" class="text-primary text-2xl shrink-0" />
+        <p class="font-semibold">If a workflow doesn't work as agreed, we fix it free or refund the build fee.</p>
       </div>
 
       <!-- Bottom callout -->

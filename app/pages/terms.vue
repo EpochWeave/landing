@@ -1,20 +1,11 @@
 <script setup lang="ts">
+import { site } from '~/utils/site'
+
 definePageMeta({ layout: 'legal' })
-useHead({
+usePageSeo({
   title: 'Terms of Service | EpochWeave AI Automation Agency',
-  meta: [
-    {
-      name: 'description',
-      content: 'Read EpochWeave terms of service covering project fees, payment terms, cancellation policy, intellectual property, and client responsibilities.'
-    },
-    { property: 'og:title', content: 'Terms of Service | EpochWeave AI Automation Agency' },
-    { property: 'og:description', content: 'Read EpochWeave terms of service covering project fees, payment terms, cancellation policy, intellectual property, and client responsibilities.' },
-    { property: 'og:url', content: 'https://epochweave.com/terms' },
-    { property: 'og:image', content: 'https://epochweave.com/logos/logo-bg-none.png' },
-    { name: 'twitter:title', content: 'Terms of Service | EpochWeave AI Automation Agency' },
-    { name: 'twitter:description', content: 'Read EpochWeave terms of service covering project fees, payment terms, cancellation policy, intellectual property, and client responsibilities.' },
-    { name: 'twitter:image', content: 'https://epochweave.com/logos/logo-bg-none.png' }
-  ]
+  description: 'EpochWeave terms of service covering build fees, payment terms, cancellations, intellectual property, and client responsibilities.',
+  path: '/terms'
 })
 const { legalEmail, website } = useBooking()
 </script>
@@ -41,7 +32,7 @@ const { legalEmail, website } = useBooking()
         making a payment, you agree to these Terms.
       </p>
       <p>
-        EpochWeave is operated by [Your Legal Full Name] as a sole proprietor based in Nairobi, Kenya.
+        EpochWeave is operated by {{ site.ownerName }} as a sole proprietor based in Nairobi, Kenya.
       </p>
 
       <hr class="border-outline/20" />
