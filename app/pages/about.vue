@@ -1,20 +1,11 @@
 <script setup lang="ts">
+import { site } from '~/utils/site'
+
 definePageMeta({ layout: 'legal' })
-useHead({
-  title: 'About EpochWeave | AI Workflow Automation Experts',
-  meta: [
-    {
-      name: 'description',
-      content: 'EpochWeave is an AI automation agency helping service businesses eliminate manual work through workflow automation, AI integration, and custom software solutions.'
-    },
-    { property: 'og:title', content: 'About EpochWeave | AI Workflow Automation Experts' },
-    { property: 'og:description', content: 'EpochWeave is an AI automation agency helping service businesses eliminate manual work through workflow automation, AI integration, and custom software solutions.' },
-    { property: 'og:url', content: 'https://epochweave.com/about' },
-    { property: 'og:image', content: 'https://epochweave.com/logos/logo-bg-none.png' },
-    { name: 'twitter:title', content: 'About EpochWeave | AI Workflow Automation Experts' },
-    { name: 'twitter:description', content: 'EpochWeave is an AI automation agency helping service businesses eliminate manual work through workflow automation, AI integration, and custom software solutions.' },
-    { name: 'twitter:image', content: 'https://epochweave.com/logos/logo-bg-none.png' }
-  ]
+usePageSeo({
+  title: 'About EpochWeave | AI Workflow Automation for Service Businesses',
+  description: `EpochWeave is a Nairobi-based automation studio run by ${site.ownerName}. We build workflow automations, AI integrations, and custom internal tools for small service businesses.`,
+  path: '/about'
 })
 </script>
 
@@ -57,7 +48,7 @@ useHead({
               <Icon name="material-symbols:psychology" class="text-primary" />
             </div>
             <h3 class="text-xl font-bold text-on-surface">AI Integration</h3>
-            <p class="text-on-surface-variant leading-relaxed">We embed AI directly into your operations. Not as a novelty — as infrastructure. AI that qualifies your inbound leads before you see them. AI that drafts follow-up emails in your voice. AI that summarises meeting notes and pulls out action items. Real intelligence doing real work inside your actual workflow.</p>
+            <p class="text-on-surface-variant leading-relaxed">We embed AI directly into your operations. Not as a novelty — as infrastructure. AI that qualifies your inbound leads before you see them. AI that drafts follow-up emails in your voice. AI that summarizes meeting notes and pulls out action items. Real intelligence doing real work inside your actual workflow.</p>
           </div>
           <div class="space-y-4">
             <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -98,6 +89,8 @@ useHead({
         </div>
       </div>
     </div>
+
+    <FounderSection />
 
     <!-- Where We Are + CTA -->
     <div class="max-w-4xl mx-auto px-margin-desktop py-20">

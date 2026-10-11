@@ -1,20 +1,11 @@
 <script setup lang="ts">
+import { site } from '~/utils/site'
+
 definePageMeta({ layout: 'legal' })
-useHead({
+usePageSeo({
   title: 'Privacy Policy | EpochWeave AI Automation Agency',
-  meta: [
-    {
-      name: 'description',
-      content: 'EpochWeave privacy policy: how we collect, use, and protect your data. GDPR compliant. Learn about your data rights and our security practices.'
-    },
-    { property: 'og:title', content: 'Privacy Policy | EpochWeave AI Automation Agency' },
-    { property: 'og:description', content: 'EpochWeave privacy policy: how we collect, use, and protect your data. GDPR compliant. Learn about your data rights and our security practices.' },
-    { property: 'og:url', content: 'https://epochweave.com/privacy' },
-    { property: 'og:image', content: 'https://epochweave.com/logos/logo-bg-none.png' },
-    { name: 'twitter:title', content: 'Privacy Policy | EpochWeave AI Automation Agency' },
-    { name: 'twitter:description', content: 'EpochWeave privacy policy: how we collect, use, and protect your data. GDPR compliant. Learn about your data rights and our security practices.' },
-    { name: 'twitter:image', content: 'https://epochweave.com/logos/logo-bg-none.png' }
-  ]
+  description: 'EpochWeave privacy policy: how we collect, use, and protect your data, your rights under GDPR, and how to contact us about your information.',
+  path: '/privacy'
 })
 const { privacyEmail } = useBooking()
 </script>
@@ -35,7 +26,7 @@ const { privacyEmail } = useBooking()
 
     <div class="space-y-10 text-on-surface-variant leading-relaxed">
 
-      <p>EpochWeave ("we," "us," "our"), operated by [Your Legal Full Name] as a sole proprietor based in Nairobi, Kenya, is committed to protecting your personal information and being transparent about how we use it. This policy applies to all visitors of epochweave.io and anyone who engages with our services.</p>
+      <p>EpochWeave ("we," "us," "our"), operated by {{ site.ownerName }} as a sole proprietor based in Nairobi, Kenya, is committed to protecting your personal information and being transparent about how we use it. This policy applies to all visitors of www.epochweave.com and anyone who engages with our services.</p>
 
       <hr class="border-outline/20" />
 
@@ -77,7 +68,7 @@ const { privacyEmail } = useBooking()
         </h2>
         <p>We use your information to:</p>
         <ul class="space-y-2 pl-4 list-disc">
-          <li>Respond to enquiries and deliver our services</li>
+          <li>Respond to inquiries and deliver our services</li>
           <li>Send project updates, invoices, and service-related communications</li>
           <li>Schedule and prepare for discovery calls</li>
           <li>Improve our website and understand how visitors use it</li>
@@ -100,7 +91,7 @@ const { privacyEmail } = useBooking()
           </li>
           <li class="flex items-start gap-3">
             <Icon name="material-symbols:arrow-forward" class="text-primary text-base mt-0.5 shrink-0" />
-            <span><strong class="text-on-surface">Legitimate interest</strong> — to follow up on enquiries and maintain business records</span>
+            <span><strong class="text-on-surface">Legitimate interest</strong> — to follow up on inquiries and maintain business records</span>
           </li>
           <li class="flex items-start gap-3">
             <Icon name="material-symbols:arrow-forward" class="text-primary text-base mt-0.5 shrink-0" />
@@ -148,7 +139,7 @@ const { privacyEmail } = useBooking()
         </h2>
         <ul class="space-y-2 pl-4 list-disc">
           <li><strong class="text-on-surface">Active clients</strong> — for the duration of our engagement plus 7 years (for financial records)</li>
-          <li><strong class="text-on-surface">Enquiries that did not convert</strong> — up to 2 years from last contact</li>
+          <li><strong class="text-on-surface">Inquiries that did not convert</strong> — up to 2 years from last contact</li>
           <li><strong class="text-on-surface">Website analytics data</strong> — up to 26 months</li>
         </ul>
         <p>You may request deletion of your data at any time (see Section 7).</p>
@@ -178,7 +169,7 @@ const { privacyEmail } = useBooking()
         <h2 class="text-xl font-bold text-on-surface flex items-center gap-3">
           <span class="text-primary font-label-mono text-sm">08</span> Data Security
         </h2>
-        <p>We take reasonable technical and organisational measures to protect your data, including encrypted communications, secure credential management, access controls, and self-hosted automation infrastructure where possible. No method of transmission over the internet is 100% secure. We will notify you promptly if we become aware of any breach affecting your data.</p>
+        <p>We take reasonable technical and organizational measures to protect your data, including encrypted communications, secure credential management, access controls, and self-hosted automation infrastructure where possible. No method of transmission over the internet is 100% secure. We will notify you promptly if we become aware of any breach affecting your data.</p>
       </section>
 
       <hr class="border-outline/20" />
@@ -187,7 +178,7 @@ const { privacyEmail } = useBooking()
         <h2 class="text-xl font-bold text-on-surface flex items-center gap-3">
           <span class="text-primary font-label-mono text-sm">09</span> Cookies
         </h2>
-        <p>Our website uses minimal cookies: essential cookies required for the site to work, and anonymised analytics cookies to understand how visitors use our site. You can control cookie settings through your browser.</p>
+        <p>Our website uses minimal cookies: essential cookies required for the site to work, and anonymized analytics cookies to understand how visitors use our site. You can control cookie settings through your browser.</p>
       </section>
 
       <hr class="border-outline/20" />

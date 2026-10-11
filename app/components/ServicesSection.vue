@@ -3,25 +3,25 @@ const services = [
   {
     tag: 'AUTOMATION',
     title: 'Workflow Automation',
-    description: 'We connect your existing tools and build automated pipelines that move data, send notifications, and handle repetitive tasks while you sleep.',
+    description: 'We connect your existing tools and build automated pipelines that move data, send notifications, and handle repetitive tasks around the clock.',
     image: '/images/service-workflow.png',
-    alt: 'Automation Pipeline Visualization',
+    alt: 'Diagram of connected tools passing data in an automated workflow',
     delay: 0,
   },
   {
     tag: 'ARTIFICIAL INTELLIGENCE',
     title: 'AI Integration',
-    description: 'We embed AI directly into your operations to summarize calls, categorize tickets, generate content, and make data-driven decisions instantly.',
+    description: 'We embed AI directly into your operations to summarize calls, categorize tickets, generate content, and sort incoming requests in seconds.',
     image: '/images/service-ai.png',
-    alt: 'AI Integration Neural Network',
+    alt: 'Illustration of AI processing business requests',
     delay: 150,
   },
   {
     tag: 'CUSTOM SYSTEMS',
     title: 'Custom Applications',
-    description: 'We build internal tools tailored to exactly how your business works, giving you a competitive edge with software that adapts to you, not the other way around.',
+    description: 'We build internal tools tailored to exactly how your business works, so your software fits your process instead of the other way around.',
     image: '/images/service-apps.png',
-    alt: 'Custom Dashboard UI',
+    alt: 'Example dashboard from a custom internal tool',
     delay: 300,
   },
 ]
@@ -38,7 +38,7 @@ const services = [
         class="mb-16"
       >
         <span class="font-label-mono text-label-mono text-primary mb-4 block">WHAT WE BUILD</span>
-        <h2 class="font-headline-md text-headline-md text-on-surface">Three ways we eliminate manual work...</h2>
+        <h2 class="font-headline-md text-headline-md text-on-surface">Three ways we take manual work off your plate</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">

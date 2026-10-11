@@ -1,20 +1,9 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'legal' })
-useHead({
+usePageSeo({
   title: 'Refund Policy | EpochWeave AI Automation Agency',
-  meta: [
-    {
-      name: 'description',
-      content: 'EpochWeave refund policy: transparent terms for project fees and monthly retainers. Learn about cancellation and refund procedures.'
-    },
-    { property: 'og:title', content: 'Refund Policy | EpochWeave AI Automation Agency' },
-    { property: 'og:description', content: 'EpochWeave refund policy: transparent terms for project fees and monthly retainers. Learn about cancellation and refund procedures.' },
-    { property: 'og:url', content: 'https://epochweave.com/refund' },
-    { property: 'og:image', content: 'https://epochweave.com/logos/logo-bg-none.png' },
-    { name: 'twitter:title', content: 'Refund Policy | EpochWeave AI Automation Agency' },
-    { name: 'twitter:description', content: 'EpochWeave refund policy: transparent terms for project fees and monthly retainers. Learn about cancellation and refund procedures.' },
-    { name: 'twitter:image', content: 'https://epochweave.com/logos/logo-bg-none.png' }
-  ]
+  description: 'EpochWeave refund policy: clear terms for one-off build fees and monthly care plans, plus how to cancel or request a refund.',
+  path: '/refund'
 })
 const { email, website } = useBooking()
 </script>

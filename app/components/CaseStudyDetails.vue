@@ -25,7 +25,7 @@ defineProps<{ study: CaseStudy }>()
       href="#contact"
       class="w-fit py-3 px-6 border border-outline rounded-lg font-bold hover:bg-surface-container-high transition-colors text-center text-sm"
     >
-      Contact
+      Ask about a build like this
     </a>
   </div>
 </template>

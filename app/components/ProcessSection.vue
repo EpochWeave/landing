@@ -14,9 +14,9 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 
 const steps = [
   { n: 1, title: 'Discovery Call',         desc: 'We map your current workflows and identify the biggest bottlenecks.', delay: 0 },
-  { n: 2, title: 'Scope & Proposal',        desc: 'We design a custom automation roadmap with clear ROI projections.', delay: 150 },
-  { n: 3, title: 'We Build',               desc: 'We develop and stress-test your new automated ecosystem.', delay: 300 },
-  { n: 4, title: 'Delivery & Maintenance', desc: 'We launch your systems and provide ongoing support to keep them running.', delay: 450 },
+  { n: 2, title: 'Scope & Proposal',        desc: 'You get a written proposal: what we will build, how long it takes, and the price.', delay: 150 },
+  { n: 3, title: 'We Build',               desc: 'We build and test the automations using your real tools and data.', delay: 300 },
+  { n: 4, title: 'Delivery & Maintenance', desc: 'We hand it over with a walkthrough, then keep it running on an optional care plan.', delay: 450 },
 ]
 </script>
 
@@ -31,7 +31,7 @@ const steps = [
         class="text-center mb-20"
       >
         <span class="font-label-mono text-label-mono text-primary mb-4 block">OUR PROCESS</span>
-        <h2 class="font-headline-md text-headline-md">From Manual Chaos to Automated Excellence</h2>
+        <h2 class="font-headline-md text-headline-md">From first call to a working system</h2>
       </div>
 
       <div class="relative">
@@ -55,7 +55,7 @@ const steps = [
             <div class="w-12 h-12 rounded-full bg-surface-container border-2 border-primary flex items-center justify-center text-primary font-bold mb-6 relative z-20">
               {{ step.n }}
             </div>
-            <h4 class="text-xl font-bold mb-2">{{ step.title }}</h4>
+            <h3 class="text-xl font-bold mb-2">{{ step.title }}</h3>
             <p class="text-on-surface-variant font-body-md">{{ step.desc }}</p>
           </div>
         </div>

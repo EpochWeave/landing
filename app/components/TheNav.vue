@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { mainNavItems } from '../utils/navigation'
+import { mainNavItems, navItemTo } from '../utils/navigation'
 
 const isScrolled = ref(false)
 const navLinkClass = 'text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 text-body-md'
@@ -20,27 +20,24 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
     ]"
   >
     <div class="max-w-7xl mx-auto px-margin-desktop h-full flex justify-between items-center">
-      <a href="/" class="flex items-center">
+      <NuxtLink to="/" class="flex items-center" aria-label="EpochWeave home">
         <img
           src="/logos/plain.jpg"
           alt="EpochWeave"
           class="h-11 w-auto object-contain"
         />
-      </a>
+      </NuxtLink>
 
       <div class="hidden md:flex gap-8 items-center">
-        <template v-for="item in mainNavItems" :key="item.label">
-          <NuxtLink v-if="item.path" :to="item.path" :class="navLinkClass">{{ item.label }}</NuxtLink>
-          <a v-else :href="`#${item.anchor}`" :class="navLinkClass">{{ item.label }}</a>
-        </template>
+        <NuxtLink v-for="item in mainNavItems" :key="item.label" :to="navItemTo(item)" :class="navLinkClass">{{ item.label }}</NuxtLink>
       </div>
 
-      <a
-        href="/#contact"
+      <NuxtLink
+        to="/#contact"
         class="bg-primary-container text-on-primary px-6 py-3 rounded-lg font-bold hover:scale-95 transition-transform duration-300 active:scale-90"
       >
         Contact
-      </a>
+      </NuxtLink>
     </div>
   </nav>
 </template>

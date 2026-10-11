@@ -5,5 +5,4 @@ export interface BlogPost {
   date: string
   readTime: string
   category: string
-  contentPath: string
 }

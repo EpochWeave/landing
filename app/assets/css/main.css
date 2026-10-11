@@ -317,6 +317,8 @@
 
   html {
     scroll-behavior: smooth;
+    /* Keep anchored sections clear of the fixed nav */
+    scroll-padding-top: 96px;
   }
 
   body {
@@ -471,3 +473,16 @@
 .custom-scrollbar::-webkit-scrollbar-thumb { background: var(--muted-foreground); border-radius: 9999px; }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: var(--primary); }
 .custom-scrollbar { scrollbar-width: thin; scrollbar-color: var(--muted-foreground) transparent; }
+
+/* Mobile: the 64px desktop side margin leaves too little room at 375px */
+@media (max-width: 767px) {
+  :root {
+    --spacing-margin-desktop: 20px;
+    --text-display-lg: 36px;
+    --text-display-lg--line-height: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
